@@ -4,49 +4,49 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
-/* Marketplace Design System - Dark Theme with Blue Gradients */
+/* Marketplace Design System - Light Theme with Sunset Gradients */
 
 @layer base {
   :root {
-    /* Dark theme marketplace colors */
-    --background: 220 13% 9%;
-    --foreground: 220 9% 95%;
+    /* Light theme marketplace colors */
+    --background: 60 10% 97%;
+    --foreground: 222 84% 5%;
 
-    --card: 220 13% 12%;
-    --card-foreground: 220 9% 95%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 84% 5%;
 
-    --popover: 220 13% 12%;
-    --popover-foreground: 220 9% 95%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 84% 5%;
 
-    /* Blue gradient primary colors */
-    --primary: 235 69% 61%;
+    /* Sunset gradient primary colors */
+    --primary: 24 100% 61%;
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 235 69% 71%;
+    --primary-glow: 33 100% 71%;
 
-    --secondary: 220 13% 16%;
-    --secondary-foreground: 220 9% 85%;
+    --secondary: 210 40% 82%;
+    --secondary-foreground: 215 25% 27%;
 
-    --muted: 220 13% 16%;
-    --muted-foreground: 220 9% 65%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
 
-    --accent: 220 13% 16%;
-    --accent-foreground: 220 9% 85%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 215 25% 27%;
 
     --destructive: 0 84% 60%;
-    --destructive-foreground: 220 9% 95%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 220 13% 20%;
-    --input: 220 13% 16%;
-    --ring: 235 69% 61%;
+    --border: 214 32% 91%;
+    --input: 0 0% 100%;
+    --ring: 24 100% 61%;
 
     --radius: 0.75rem;
 
-    /* Marketplace specific tokens */
-    --gradient-primary: linear-gradient(135deg, hsl(235 69% 47%) 0%, hsl(235 69% 71%) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(220 13% 12%) 0%, hsl(220 13% 14%) 100%);
-    --shadow-card: 0 4px 20px -2px hsl(235 69% 47% / 0.1);
-    --shadow-glow: 0 0 40px hsl(235 69% 61% / 0.15);
-    --shadow-hover: 0 8px 30px -4px hsl(235 69% 47% / 0.2);
+    /* Sunset theme specific tokens */
+    --gradient-primary: linear-gradient(90deg, #FF6A3D 0%, #FF8A00 50%, #FFC371 100%);
+    --gradient-card: linear-gradient(145deg, #FFFFFF 0%, #FEFEFE 100%);
+    --shadow-card: 0 6px 18px rgba(15, 23, 42, 0.06);
+    --shadow-glow: 0 8px 20px rgba(255, 138, 0, 0.25);
+    --shadow-hover: 0 8px 25px rgba(15, 23, 42, 0.12);
     
     /* Category colors */
     --category-reparos: 25 95% 53%;
@@ -173,15 +173,15 @@
     transition: var(--transition-spring);
   }
 
-  /* Category badge colors */
-  .category-reparos { @apply bg-orange-500/20 text-orange-400 border border-orange-500/30; }
-  .category-casa { @apply bg-emerald-500/20 text-emerald-400 border border-emerald-500/30; }
-  .category-beleza { @apply bg-pink-500/20 text-pink-400 border border-pink-500/30; }
-  .category-aulas { @apply bg-yellow-500/20 text-yellow-400 border border-yellow-500/30; }
-  .category-tecnologia { @apply bg-primary/20 text-primary border border-primary/30; }
-  .category-pets { @apply bg-amber-500/20 text-amber-400 border border-amber-500/30; }
-  .category-eventos { @apply bg-purple-500/20 text-purple-400 border border-purple-500/30; }
-  .category-automotivo { @apply bg-blue-500/20 text-blue-400 border border-blue-500/30; }
+  /* Category badge colors - Light theme */
+  .category-reparos { @apply bg-orange-100 text-orange-600 border border-orange-200; }
+  .category-casa { @apply bg-emerald-100 text-emerald-600 border border-emerald-200; }
+  .category-beleza { @apply bg-rose-100 text-rose-600 border border-rose-200; }
+  .category-aulas { @apply bg-amber-100 text-amber-600 border border-amber-200; }
+  .category-tecnologia { @apply bg-blue-100 text-blue-600 border border-blue-200; }
+  .category-pets { @apply bg-yellow-100 text-yellow-600 border border-yellow-200; }
+  .category-eventos { @apply bg-purple-100 text-purple-600 border border-purple-200; }
+  .category-automotivo { @apply bg-slate-100 text-slate-600 border border-slate-200; }
 
   /* Animation classes */
   @keyframes fadeIn {
