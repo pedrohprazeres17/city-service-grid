@@ -6,49 +6,34 @@ interface EmptyStateProps {
 }
 
 export const EmptyState = ({ searchTerm, activeCategory }: EmptyStateProps) => {
-  const getMessage = () => {
-    if (searchTerm && activeCategory !== "Todas") {
-      return `Nenhum serviço encontrado para "${searchTerm}" em ${activeCategory}`;
-    }
-    if (searchTerm) {
-      return `Nenhum serviço encontrado para "${searchTerm}"`;
-    }
-    if (activeCategory !== "Todas") {
-      return `Nenhum serviço encontrado na categoria ${activeCategory}`;
-    }
-    return "Nenhum serviço encontrado";
-  };
-
-  const getSuggestion = () => {
-    if (searchTerm) {
-      return "Tente buscar por outros termos ou navegue pelas categorias disponíveis.";
-    }
-    return "Tente selecionar uma categoria diferente ou ajustar seus filtros.";
-  };
-
   return (
-    <div className="flex flex-col items-center justify-center py-16 px-4 text-center bg-card rounded-xl shadow-card border border-border">
-      <div className="w-24 h-24 bg-muted rounded-full flex items-center justify-center mb-6">
-        <Search className="w-12 h-12 text-muted-foreground" />
+    <div className="flex flex-col items-center justify-center py-16 text-center space-y-4">
+      <div className="w-16 h-16 rounded-full bg-muted/50 flex items-center justify-center mb-2">
+        {searchTerm ? (
+          <Search className="w-8 h-8 text-muted-foreground" />
+        ) : (
+          <Frown className="w-8 h-8 text-muted-foreground" />
+        )}
       </div>
       
-      <h3 className="text-xl font-semibold text-foreground mb-3">
-        {getMessage()}
-      </h3>
-      
-      <p className="text-muted-foreground max-w-md mb-6">
-        {getSuggestion()}
-      </p>
-      
-      <div className="flex flex-col gap-3">
-        <p className="text-sm text-muted-foreground">
-          Sugestões:
+      <div className="space-y-2">
+        <h3 className="text-xl font-semibold">Nenhum serviço encontrado</h3>
+        <p className="text-muted-foreground max-w-md">
+          {searchTerm ? (
+            <>
+              Não encontramos serviços para "{searchTerm}"
+              {activeCategory !== "Todas" && ` em ${activeCategory}`}.
+              <br />
+              Tente ajustar sua busca ou categoria.
+            </>
+          ) : (
+            <>
+              Não há serviços disponíveis na categoria "{activeCategory}".
+              <br />
+              Experimente uma categoria diferente.
+            </>
+          )}
         </p>
-        <ul className="text-sm text-muted-foreground space-y-1">
-          <li>• Verifique a ortografia dos termos de busca</li>
-          <li>• Use termos mais genéricos</li>
-          <li>• Explore diferentes categorias</li>
-        </ul>
       </div>
     </div>
   );

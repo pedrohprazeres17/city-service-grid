@@ -17,14 +17,13 @@ export const SearchBar = ({ searchTerm, onSearchChange, activeCategory }: Search
 
   return (
     <div className="relative">
-      <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-muted-foreground w-5 h-5" />
+      <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4" />
       <Input
         type="text"
         placeholder={getPlaceholder()}
         value={searchTerm}
         onChange={(e) => onSearchChange(e.target.value)}
-        className="pl-12 pr-4 py-3 text-base bg-background border-border focus:border-primary focus:ring-primary/10 rounded-full shadow-sm"
-        aria-label="Buscar serviços"
+        className="pl-10 bg-input/50 border-border/50 focus:border-primary/50 focus:bg-input transition-smooth"
       />
     </div>
   );

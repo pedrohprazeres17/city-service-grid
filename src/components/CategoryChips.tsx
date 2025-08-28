@@ -15,15 +15,15 @@ export const CategoryChips = ({
   totalCount 
 }: CategoryChipsProps) => {
   return (
-    <div className="flex flex-wrap gap-3 overflow-x-auto pb-2 scrollbar-hide">
+    <div className="flex flex-wrap gap-2">
       <Button
         variant={activeCategory === "Todas" ? "default" : "outline"}
         size="sm"
         onClick={() => onCategoryChange("Todas")}
-        className={`transition-smooth font-medium whitespace-nowrap ${
+        className={`transition-smooth font-medium ${
           activeCategory === "Todas" 
-            ? "gradient-primary shadow-glow hover:shadow-glow text-white" 
-            : "border-border bg-card hover:border-primary/30 hover:bg-primary/5 hover:text-primary"
+            ? "gradient-primary shadow-glow hover:shadow-glow" 
+            : "border-border/50 hover:border-primary/50 hover:bg-primary/10"
         }`}
         aria-pressed={activeCategory === "Todas"}
       >
@@ -36,10 +36,10 @@ export const CategoryChips = ({
           variant={activeCategory === name ? "default" : "outline"}
           size="sm"
           onClick={() => onCategoryChange(name)}
-          className={`transition-smooth font-medium whitespace-nowrap ${
+          className={`transition-smooth font-medium ${
             activeCategory === name
-              ? "gradient-primary shadow-glow hover:shadow-glow text-white"
-              : `border-border bg-card hover:border-primary/30 hover:bg-primary/5 hover:text-primary category-${getCategorySlug(name)}`
+              ? "gradient-primary shadow-glow hover:shadow-glow"
+              : `border-border/50 hover:border-primary/50 hover:bg-primary/10 category-${getCategorySlug(name)}-hover`
           }`}
           aria-pressed={activeCategory === name}
         >
