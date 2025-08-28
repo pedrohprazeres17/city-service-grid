@@ -1,5 +1,33 @@
 import { Service } from "@/types/service";
 
+/**
+ * ============================================================================
+ * ARRAY PRINCIPAL DE SERVIÇOS (services)
+ * ============================================================================
+ * 
+ * Este é o array principal que contém todos os dados dos serviços do marketplace.
+ * Cada objeto no array representa um serviço específico com suas informações completas.
+ * 
+ * ESTRUTURA DE CADA OBJETO SERVICE:
+ * - id: Identificador único numérico (chave primária)
+ * - name: Nome do serviço (string)
+ * - description: Descrição detalhada do que o serviço oferece
+ * - category: Categoria do serviço (deve corresponder às categorias definidas no array categories)
+ * - price: Preço em reais (number) - valor base do serviço
+ * - rating: Avaliação média (number de 0 a 5)
+ * - reviews: Número total de avaliações recebidas
+ * - location: Localização onde o serviço é oferecido
+ * - image: Caminho para a imagem do serviço (gerada por IA)
+ * - alt: Texto alternativo para acessibilidade da imagem (opcional)
+ * - popularity: Índice de popularidade (0-100) usado para ordenação
+ * 
+ * COMO O ARRAY É UTILIZADO:
+ * 1. Exibição na grade principal de serviços
+ * 2. Filtros por categoria (usando service.category)
+ * 3. Busca por texto (name e description)
+ * 4. Ordenação (price, popularity)
+ * 5. Contagem de serviços por categoria
+ */
 export const services: Service[] = [
   {
     id: 1,
@@ -211,13 +239,31 @@ export const services: Service[] = [
   }
 ];
 
+/**
+ * ============================================================================
+ * ARRAY DE CATEGORIAS (categories)
+ * ============================================================================
+ * 
+ * Array que define todas as categorias disponíveis no marketplace.
+ * Este array é usado para:
+ * 1. Validação - garantir que service.category seja uma categoria válida
+ * 2. Geração dos chips de filtro na interface
+ * 3. Contagem de serviços por categoria
+ * 4. Navegação e organização da UI
+ * 
+ * IMPORTANTE: 
+ * - Cada string neste array deve corresponder exatamente aos valores
+ *   usados no campo 'category' dos objetos Service
+ * - A ordem das categorias define a ordem de exibição na interface
+ * - Mudanças neste array afetam a funcionalidade de filtros
+ */
 export const categories = [
-  "Reparos & Manutenção",
-  "Casa & Limpeza", 
-  "Beleza & Bem-estar",
-  "Aulas & Treinamentos",
-  "Tecnologia & Design",
-  "Pets",
-  "Eventos & Fotografia",
-  "Automotivo"
+  "Reparos & Manutenção",    // Serviços técnicos: eletricista, encanador, etc.
+  "Casa & Limpeza",          // Limpeza residencial, cozinheira, organização
+  "Beleza & Bem-estar",      // Personal trainer, manicure, massagem, etc.
+  "Aulas & Treinamentos",    // Professores, cursos, capacitação
+  "Tecnologia & Design",     // Desenvolvimento web, design gráfico, TI
+  "Pets",                    // Veterinário, passeador, pet shop
+  "Eventos & Fotografia",    // Fotógrafos, DJs, organização de eventos
+  "Automotivo"               // Mecânico, lavagem, manutenção veicular
 ];
