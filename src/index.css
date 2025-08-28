@@ -2,41 +2,65 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Marketplace Design System - Dark Theme with Blue Gradients */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Dark theme marketplace colors */
+    --background: 220 13% 9%;
+    --foreground: 220 9% 95%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 220 13% 12%;
+    --card-foreground: 220 9% 95%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 220 13% 12%;
+    --popover-foreground: 220 9% 95%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Blue gradient primary colors */
+    --primary: 235 69% 61%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 235 69% 71%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 220 13% 16%;
+    --secondary-foreground: 220 9% 85%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 220 13% 16%;
+    --muted-foreground: 220 9% 65%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 220 13% 16%;
+    --accent-foreground: 220 9% 85%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 220 9% 95%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 220 13% 20%;
+    --input: 220 13% 16%;
+    --ring: 235 69% 61%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
+
+    /* Marketplace specific tokens */
+    --gradient-primary: linear-gradient(135deg, hsl(235 69% 47%) 0%, hsl(235 69% 71%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(220 13% 12%) 0%, hsl(220 13% 14%) 100%);
+    --shadow-card: 0 4px 20px -2px hsl(235 69% 47% / 0.1);
+    --shadow-glow: 0 0 40px hsl(235 69% 61% / 0.15);
+    --shadow-hover: 0 8px 30px -4px hsl(235 69% 47% / 0.2);
+    
+    /* Category colors */
+    --category-reparos: 25 95% 53%;
+    --category-casa: 142 76% 36%;
+    --category-beleza: 320 65% 52%;
+    --category-aulas: 43 74% 49%;
+    --category-tecnologia: 235 69% 61%;
+    --category-pets: 39 84% 56%;
+    --category-eventos: 271 81% 56%;
+    --category-automotivo: 210 40% 50%;
+
+    /* Animation values */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-spring: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
     --sidebar-background: 0 0% 98%;
 
@@ -100,6 +124,99 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-inter;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--primary) / 0.6);
+    border-radius: 3px;
+  }
+}
+
+@layer components {
+  /* Marketplace specific component styles */
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+  
+  .gradient-card {
+    background: var(--gradient-card);
+  }
+  
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+  
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .shadow-hover {
+    box-shadow: var(--shadow-hover);
+  }
+  
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+  
+  .transition-spring {
+    transition: var(--transition-spring);
+  }
+
+  /* Category badge colors */
+  .category-reparos { @apply bg-orange-500/20 text-orange-400 border border-orange-500/30; }
+  .category-casa { @apply bg-emerald-500/20 text-emerald-400 border border-emerald-500/30; }
+  .category-beleza { @apply bg-pink-500/20 text-pink-400 border border-pink-500/30; }
+  .category-aulas { @apply bg-yellow-500/20 text-yellow-400 border border-yellow-500/30; }
+  .category-tecnologia { @apply bg-primary/20 text-primary border border-primary/30; }
+  .category-pets { @apply bg-amber-500/20 text-amber-400 border border-amber-500/30; }
+  .category-eventos { @apply bg-purple-500/20 text-purple-400 border border-purple-500/30; }
+  .category-automotivo { @apply bg-blue-500/20 text-blue-400 border border-blue-500/30; }
+
+  /* Animation classes */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes slideInFromBottom {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-in {
+    animation-fill-mode: both;
+  }
+
+  .fade-in {
+    animation-name: fadeIn;
+  }
+
+  .slide-in-from-bottom {
+    animation-name: slideInFromBottom;
+  }
+
+  .duration-300 {
+    animation-duration: 0.3s;
+  }
+
+  .duration-500 {
+    animation-duration: 0.5s;
   }
 }
