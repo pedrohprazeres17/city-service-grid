@@ -1,7 +1,7 @@
 import React from "react";
 import { useMarketplace } from "@/hooks/useMarketplace";
 import { ServiceCard } from "@/components/ServiceCard";
-import { CategoryChips } from "@/components/CategoryChips";
+import { FilterButton } from "@/components/FilterButton";
 import { SearchBar } from "@/components/SearchBar";
 import { SortSelect } from "@/components/SortSelect";
 import { ServiceModal } from "@/components/ServiceModal";
@@ -51,23 +51,24 @@ const Index = () => {
               />
             </div>
             
-            <SortSelect
-              sortBy={filterState.sortBy}
-              onSortChange={setSortBy}
-            />
+            <div className="flex items-center gap-3">
+              <FilterButton
+                categories={categoriesWithCount}
+                activeCategory={filterState.activeCategory}
+                onCategoryChange={setActiveCategory}
+                totalCount={services.length}
+              />
+              <SortSelect
+                sortBy={filterState.sortBy}
+                onSortChange={setSortBy}
+              />
+            </div>
           </div>
-
-          <CategoryChips
-            categories={categoriesWithCount}
-            activeCategory={filterState.activeCategory}
-            onCategoryChange={setActiveCategory}
-            totalCount={services.length}
-          />
         </section>
 
         {/* Results Counter */}
         <div className="flex items-center justify-between">
-          <p className="text-muted-foreground">
+          <p className="text-muted-foreground" aria-live="polite">
             Exibindo <span className="font-semibold text-foreground">{filteredServices.length}</span> serviço{filteredServices.length !== 1 ? 's' : ''}
           </p>
         </div>
