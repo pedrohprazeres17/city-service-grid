@@ -25,25 +25,28 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <header className="border-b border-border/50 bg-card/50 backdrop-blur-sm sticky top-0 z-40">
-        <div className="container mx-auto px-4 py-6">
-          <div className="text-center space-y-2">
-            <h1 className="text-4xl font-bold gradient-primary bg-clip-text text-transparent">
-              Marketplace de Serviços Locais
+      <header className="border-b border-border bg-card shadow-sm sticky top-0 z-40">
+        <div className="container mx-auto px-4 py-8 max-w-6xl">
+          <div className="text-center space-y-3">
+            <h1 className="text-5xl font-bold text-foreground">
+              <span className="gradient-primary bg-clip-text text-transparent">
+                Marketplace
+              </span>{" "}
+              de Serviços Locais
             </h1>
-            <p className="text-muted-foreground text-lg">
-              Encontre os melhores profissionais da sua região
+            <p className="text-muted-foreground text-xl max-w-2xl mx-auto">
+              Encontre os melhores profissionais da sua região com qualidade garantida
             </p>
           </div>
         </div>
       </header>
 
       {/* Main Content */}
-      <main className="container mx-auto px-4 py-8 space-y-8">
+      <main className="container mx-auto px-4 py-8 space-y-8 max-w-6xl">
         {/* Control Bar */}
-        <section className="space-y-6">
-          <div className="flex flex-col lg:flex-row gap-4 lg:items-center lg:justify-between">
-            <div className="flex-1 max-w-md">
+        <section className="bg-card rounded-xl shadow-card p-6 sticky top-20 z-30 space-y-6">
+          <div className="flex flex-col lg:flex-row gap-6 lg:items-center lg:justify-between">
+            <div className="flex-1 max-w-xl">
               <SearchBar
                 searchTerm={filterState.searchTerm}
                 onSearchChange={setSearchTerm}

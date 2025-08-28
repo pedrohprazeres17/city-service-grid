@@ -12,37 +12,37 @@ interface ServiceCardProps {
 
 export const ServiceCard = ({ service, onViewDetails }: ServiceCardProps) => {
   return (
-    <Card className="group gradient-card shadow-card hover:shadow-hover transition-smooth border-border/50 overflow-hidden">
-      <div className="relative">
+    <Card className="group bg-card shadow-card hover:shadow-hover transition-smooth border border-border overflow-hidden rounded-xl">
+      <div className="relative aspect-video">
         <img
           src={service.image}
           alt={service.name}
-          className="w-full h-48 object-cover transition-smooth group-hover:scale-105"
+          className="w-full h-full object-cover transition-smooth group-hover:scale-105"
           loading="lazy"
         />
         <div className="absolute top-3 right-3">
           <Badge 
             variant="secondary" 
-            className={`category-${getCategorySlug(service.category)} border text-xs font-medium`}
+            className={`category-${getCategorySlug(service.category)} text-xs font-medium`}
           >
             {service.category}
           </Badge>
         </div>
       </div>
       
-      <div className="p-4 space-y-3">
-        <div className="space-y-2">
-          <h3 className="font-semibold text-lg leading-tight group-hover:text-primary transition-smooth">
+      <div className="p-6 space-y-4">
+        <div className="space-y-3">
+          <h3 className="font-semibold text-xl leading-tight group-hover:text-primary transition-smooth line-clamp-2">
             {service.name}
           </h3>
           
           <div className="flex items-center justify-between text-sm text-muted-foreground">
             <div className="flex items-center gap-1">
-              <MapPin className="w-4 h-4" />
+              <MapPin className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-smooth" />
               <span>{service.location}</span>
             </div>
             
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-3">
               <div className="flex items-center gap-1">
                 <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
                 <span className="font-medium text-foreground">{service.rating}</span>
@@ -55,8 +55,8 @@ export const ServiceCard = ({ service, onViewDetails }: ServiceCardProps) => {
           </div>
         </div>
 
-        <div className="flex items-center justify-between pt-2 border-t border-border/50">
-          <div className="text-xl font-bold text-primary">
+        <div className="flex items-center justify-between pt-3 border-t border-border">
+          <div className="text-2xl font-bold gradient-primary bg-clip-text text-transparent">
             {formatPrice(service.price)}
           </div>
           
@@ -64,7 +64,7 @@ export const ServiceCard = ({ service, onViewDetails }: ServiceCardProps) => {
             variant="default"
             size="sm"
             onClick={() => onViewDetails(service)}
-            className="gradient-primary hover:shadow-glow transition-spring font-medium"
+            className="gradient-primary hover:shadow-glow transition-spring font-medium px-6"
           >
             Ver detalhes
           </Button>
