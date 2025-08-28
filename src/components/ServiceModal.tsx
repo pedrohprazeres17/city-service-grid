@@ -25,8 +25,10 @@ export const ServiceModal = ({ service, isOpen, onClose }: ServiceModalProps) =>
           <div className="relative">
             <img
               src={service.image}
-              alt={service.name}
+              alt={service.alt || service.name}
               className="w-full h-64 object-cover rounded-lg"
+              loading="lazy"
+              decoding="async"
             />
             <Badge 
               className={`absolute top-3 right-3 category-${getCategorySlug(service.category)} border text-sm font-medium`}

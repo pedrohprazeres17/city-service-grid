@@ -16,9 +16,10 @@ export const ServiceCard = ({ service, onViewDetails }: ServiceCardProps) => {
       <div className="relative">
         <img
           src={service.image}
-          alt={service.name}
+          alt={service.alt || service.name}
           className="w-full h-48 object-cover transition-smooth group-hover:scale-105"
           loading="lazy"
+          decoding="async"
         />
         <div className="absolute top-3 right-3">
           <Badge 

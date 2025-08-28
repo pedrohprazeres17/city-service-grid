@@ -8,6 +8,7 @@ export interface Service {
   reviews: number;
   location: string;
   image: string;
+  alt?: string;
   popularity: number;
 }
 

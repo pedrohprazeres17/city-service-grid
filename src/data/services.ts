@@ -10,7 +10,8 @@ export const services: Service[] = [
     rating: 4.8,
     reviews: 156,
     location: "Centro, Curitiba",
-    image: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=400&h=300&fit=crop",
+    image: "/images/services/1-eletricista-residencial.jpg",
+    alt: "Eletricista Residencial – Reparos & Manutenção em Centro, Curitiba",
     popularity: 95
   },
   {
@@ -22,7 +23,8 @@ export const services: Service[] = [
     rating: 4.7,
     reviews: 203,
     location: "Batel, Curitiba",
-    image: "https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=400&h=300&fit=crop",
+    image: "/images/services/2-encanador-especializado.jpg",
+    alt: "Encanador Especializado – Reparos & Manutenção em Batel, Curitiba",
     popularity: 88
   },
   {
@@ -34,7 +36,8 @@ export const services: Service[] = [
     rating: 4.9,
     reviews: 89,
     location: "Água Verde, Curitiba",
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop",
+    image: "/images/services/3-limpeza-residencial-premium.jpg",
+    alt: "Limpeza Residencial Premium – Casa & Limpeza em Água Verde, Curitiba",
     popularity: 92
   },
   {
@@ -46,7 +49,8 @@ export const services: Service[] = [
     rating: 4.6,
     reviews: 127,
     location: "Portão, Curitiba",
-    image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=300&fit=crop",
+    image: "/images/services/4-personal-trainer.jpg",
+    alt: "Personal Trainer – Beleza & Bem-estar em Portão, Curitiba",
     popularity: 78
   },
   {
@@ -58,7 +62,8 @@ export const services: Service[] = [
     rating: 4.8,
     reviews: 245,
     location: "Cabral, Curitiba",
-    image: "https://images.unsplash.com/photo-1604654894610-df63bc536371?w=400&h=300&fit=crop",
+    image: "/images/services/5-manicure-pedicure.jpg",
+    alt: "Manicure & Pedicure – Beleza & Bem-estar em Cabral, Curitiba",
     popularity: 85
   },
   {
@@ -70,7 +75,8 @@ export const services: Service[] = [
     rating: 4.9,
     reviews: 167,
     location: "Juvevê, Curitiba",
-    image: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=400&h=300&fit=crop",
+    image: "/images/services/6-professor-ingles.jpg",
+    alt: "Professor de Inglês – Aulas & Treinamentos em Juvevê, Curitiba",
     popularity: 91
   },
   {
@@ -82,7 +88,8 @@ export const services: Service[] = [
     rating: 4.7,
     reviews: 78,
     location: "Centro, Curitiba",
-    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&h=300&fit=crop",
+    image: "/images/services/7-desenvolvedor-web.jpg",
+    alt: "Desenvolvedor Web – Tecnologia & Design em Centro, Curitiba",
     popularity: 87
   },
   {
@@ -94,7 +101,8 @@ export const services: Service[] = [
     rating: 4.5,
     reviews: 94,
     location: "Batel, Curitiba",
-    image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400&h=300&fit=crop",
+    image: "/images/services/8-designer-grafico.jpg",
+    alt: "Designer Gráfico – Tecnologia & Design em Batel, Curitiba",
     popularity: 73
   },
   {
@@ -106,7 +114,8 @@ export const services: Service[] = [
     rating: 4.9,
     reviews: 312,
     location: "Água Verde, Curitiba",
-    image: "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=400&h=300&fit=crop",
+    image: "/images/services/9-passeador-caes.jpg",
+    alt: "Passeador de Cães – Pets em Água Verde, Curitiba",
     popularity: 96
   },
   {
@@ -118,7 +127,8 @@ export const services: Service[] = [
     rating: 4.8,
     reviews: 145,
     location: "Portão, Curitiba",
-    image: "https://images.unsplash.com/photo-1559190394-df5a28aab5c5?w=400&h=300&fit=crop",
+    image: "/images/services/10-veterinario-domiciliar.jpg",
+    alt: "Veterinário Domiciliar – Pets em Portão, Curitiba",
     popularity: 89
   },
   {
@@ -130,7 +140,8 @@ export const services: Service[] = [
     rating: 4.6,
     reviews: 67,
     location: "Centro, Curitiba",
-    image: "https://images.unsplash.com/photo-1542038784456-1ea8e1e9f6c5?w=400&h=300&fit=crop",
+    image: "/images/services/11-fotografo-eventos.jpg",
+    alt: "Fotógrafo de Eventos – Eventos & Fotografia em Centro, Curitiba",
     popularity: 81
   },
   {
@@ -142,7 +153,8 @@ export const services: Service[] = [
     rating: 4.4,
     reviews: 89,
     location: "Cabral, Curitiba",
-    image: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=300&fit=crop",
+    image: "/images/services/12-dj-festas.jpg",
+    alt: "DJ para Festas – Eventos & Fotografia em Cabral, Curitiba",
     popularity: 75
   },
   {
@@ -154,7 +166,8 @@ export const services: Service[] = [
     rating: 4.7,
     reviews: 198,
     location: "Portão, Curitiba",
-    image: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=400&h=300&fit=crop",
+    image: "/images/services/13-mecanico-automotivo.jpg",
+    alt: "Mecânico Automotivo – Automotivo em Portão, Curitiba",
     popularity: 86
   },
   {
@@ -166,7 +179,8 @@ export const services: Service[] = [
     rating: 4.5,
     reviews: 267,
     location: "Batel, Curitiba",
-    image: "https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?w=400&h=300&fit=crop",
+    image: "/images/services/14-lavagem-automotiva.jpg",
+    alt: "Lavagem Automotiva – Automotivo em Batel, Curitiba",
     popularity: 82
   },
   {
@@ -178,7 +192,8 @@ export const services: Service[] = [
     rating: 4.9,
     reviews: 134,
     location: "Juvevê, Curitiba",
-    image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&h=300&fit=crop",
+    image: "/images/services/15-cozinheira-particular.jpg",
+    alt: "Cozinheira Particular – Casa & Limpeza em Juvevê, Curitiba",
     popularity: 90
   },
   {
@@ -190,7 +205,8 @@ export const services: Service[] = [
     rating: 4.8,
     reviews: 156,
     location: "Água Verde, Curitiba",
-    image: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=300&fit=crop",
+    image: "/images/services/16-professor-musica.jpg",
+    alt: "Professor de Música – Aulas & Treinamentos em Água Verde, Curitiba",
     popularity: 84
   }
 ];
